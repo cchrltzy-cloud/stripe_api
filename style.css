@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.stripe-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.stripe-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stripe-title {
+    font-size: 2.5rem;
+    color: #635bff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.stripe-title i {
+    font-size: 2.5rem;
+}
+
+.stripe-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.stripe-main {
+    flex: 1;
+}
+
+.stripe-controls {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.stripe-section {
+    margin-bottom: 30px;
+}
+
+.stripe-section:last-child {
+    margin-bottom: 0;
+}
+
+.stripe-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.stripe-input-wrapper {
+    position: relative;
+    margin: 20px 0;
+}
+
+.stripe-input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.stripe-search-input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.stripe-search-input:focus {
+    border-color: #635bff;
+}
+
+.stripe-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.stripe-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.stripe-btn-primary {
+    background-color: #635bff;
+    color: #ffffff;
+}
+
+.stripe-btn-primary:hover:not(:disabled) {
+    background-color: #5851e6;
+}
+
+.stripe-btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.stripe-btn-secondary:hover:not(:disabled) {
+    background-color: #e0e0e0;
+}
+
+.stripe-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.stripe-loading {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.stripe-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f0f0f0;
+    border-top-color: #635bff;
+    border-radius: 50%;
+    animation: stripe-spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes stripe-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.stripe-loading p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.stripe-error {
+    background-color: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #856404;
+}
+
+.stripe-error i {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.stripe-error p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.stripe-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stripe-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stripe-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stripe-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.stripe-card-icon {
+    font-size: 1.5rem;
+    color: #635bff;
+}
+
+.stripe-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.stripe-card-body {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.stripe-card-field {
+    margin-bottom: 12px;
+}
+
+.stripe-card-field-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.stripe-card-field-value {
+    color: #666;
+    word-wrap: break-word;
+}
+
+.stripe-card-id {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.85rem;
+    color: #999;
+    word-break: break-all;
+}
+
+.stripe-empty {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stripe-empty i {
+    font-size: 4rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.stripe-empty p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.stripe-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.stripe-footer p {
+    margin: 8px 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.stripe-footer a {
+    color: #635bff;
+    text-decoration: none;
+}
+
+.stripe-footer a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .stripe-container {
+        padding: 15px;
+    }
+
+    .stripe-header {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+    }
+
+    .stripe-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stripe-title i {
+        font-size: 2rem;
+    }
+
+    .stripe-subtitle {
+        font-size: 1rem;
+    }
+
+    .stripe-controls {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .stripe-buttons {
+        flex-direction: column;
+    }
+
+    .stripe-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stripe-results {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stripe-card {
+        padding: 20px;
+    }
+
+    .stripe-loading {
+        padding: 30px 20px;
+    }
+
+    .stripe-spinner {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stripe-container {
+        padding: 10px;
+    }
+
+    .stripe-title {
+        font-size: 1.5rem;
+    }
+
+    .stripe-title i {
+        font-size: 1.5rem;
+    }
+
+    .stripe-controls {
+        padding: 15px;
+    }
+
+    .stripe-search-input {
+        padding: 12px 12px 12px 40px;
+        font-size: 0.95rem;
+    }
+
+    .stripe-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .stripe-card {
+        padding: 15px;
+    }
+
+    .stripe-card-title {
+        font-size: 1.1rem;
+    }
+}
+

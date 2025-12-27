@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe API Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="stripe-container">
+        <header class="stripe-header">
+            <h1 class="stripe-title">
+                <i class="bi bi-credit-card"></i>
+                Stripe API Explorer
+            </h1>
+            <p class="stripe-subtitle">Explore your Stripe customers and products</p>
+        </header>
+
+        <main class="stripe-main">
+            <div class="stripe-controls">
+                <div class="stripe-section">
+                    <h3 class="stripe-section-title">Get All Items</h3>
+                    <div class="stripe-buttons">
+                        <button id="stripe-customers-btn" class="stripe-btn stripe-btn-primary">
+                            <i class="bi bi-people"></i>
+                            <span>Get Customers</span>
+                        </button>
+                        <button id="stripe-products-btn" class="stripe-btn stripe-btn-secondary">
+                            <i class="bi bi-box"></i>
+                            <span>Get Products</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="stripe-section">
+                    <h3 class="stripe-section-title">Get Specific Item by ID</h3>
+                    <div class="stripe-input-wrapper">
+                        <i class="bi bi-search stripe-input-icon"></i>
+                        <input 
+                            type="text" 
+                            id="stripe-search-input" 
+                            class="stripe-search-input" 
+                            placeholder="Enter Customer ID or Product ID..."
+                        >
+                    </div>
+                    <div class="stripe-buttons">
+                        <button id="stripe-get-customer-btn" class="stripe-btn stripe-btn-secondary">
+                            <i class="bi bi-person"></i>
+                            <span>Get Customer</span>
+                        </button>
+                        <button id="stripe-get-product-btn" class="stripe-btn stripe-btn-secondary">
+                            <i class="bi bi-box-seam"></i>
+                            <span>Get Product</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="stripe-loading" class="stripe-loading" style="display: none;">
+                <div class="stripe-spinner"></div>
+                <p>Loading...</p>
+            </div>
+
+            <div id="stripe-error" class="stripe-error" style="display: none;">
+                <i class="bi bi-exclamation-triangle"></i>
+                <p id="stripe-error-message"></p>
+            </div>
+
+            <div id="stripe-results" class="stripe-results"></div>
+        </main>
+
+        <footer class="stripe-footer">
+            <p>Powered by Stripe API</p>
+            <p>API Documentation: <a href="https://stripe.com/docs/api" target="_blank">stripe.com/docs/api</a></p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
